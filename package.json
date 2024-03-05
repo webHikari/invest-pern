@@ -1,0 +1,25 @@
+{
+  "name": "invest-pern",
+  "version": "1.0.0",
+  "description": "KYS PLS HAHHAHAH",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webHikari/invest-pern.git"
+  },
+  "keywords": [
+    "js",
+    "react",
+    "node",
+    "express"
+  ],
+  "author": "webHikari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webHikari/invest-pern/issues"
+  },
+  "homepage": "https://github.com/webHikari/invest-pern#readme"
+}
