@@ -17,7 +17,7 @@ form input {
     transition: border-color 0.25s;
   }
   form input:hover {
-    border-color: #646cff;
+    border-color: #6e6e6e;
   }
   form input:focus,
   form input:focus-visible {

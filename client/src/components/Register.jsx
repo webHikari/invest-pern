@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Register = ({setAuth}) => {
     const [inputs, setInputs] = useState({
-        email: 'cat@email.com',
+        email: '',
         password: '',
-        name: 'prikol',
+        name: '',
     });
 
     const { email, password, name } = inputs;
@@ -44,21 +44,21 @@ const Register = ({setAuth}) => {
                 <input
                     type="email"
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     value={email}
                     onChange={onChange}
                 />
                 <input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={password}
                     onChange={onChange}
                 />
                 <input
                     type="text"
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     value={name}
                     onChange={onChange}
                 />

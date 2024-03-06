@@ -10,9 +10,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Page404 from './components/Page404';
 import { useState, useEffect } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const setAuth = (boolean) => {

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = ({ setAuth }) => {
     const [name, setName] = useState('');
-
+    
+    
     const getName = async () => {
         try {
             const response = await fetch('http://localhost:3000/dashboard', {
