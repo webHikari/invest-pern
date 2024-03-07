@@ -5,7 +5,7 @@ const pool = new Pool({
     password: 'root',
     host: 'localhost',
     post: 5432,
-    database: 'jwttutorial',
+    database: 'invest_app',
 });
 
 module.exports = pool;

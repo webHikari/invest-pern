@@ -12,7 +12,6 @@ import Page404 from './components/Page404';
 import { useState, useEffect } from 'react';
 
 function App() {
-
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const setAuth = (boolean) => {
@@ -76,8 +75,9 @@ function App() {
                             )
                         }
                     />
+                    <Route path="/" element={<Navigate to="/dashboard" />} />
                     <Route path="/404" element={<Page404 />} />
-                    <Route path="/*" element={<Navigate to="/404" />} />
+                    <Route path="/*" element={<Navigate to="/" />} />
                 </Routes>
             </div>
         </Router>
