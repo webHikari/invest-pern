@@ -15,11 +15,11 @@ form input {
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
-  }
-  form input:hover {
+}
+form input:hover {
     border-color: #6e6e6e;
-  }
-  form input:focus,
-  form input:focus-visible {
+}
+form input:focus,
+form input:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
-  }
+}

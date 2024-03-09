@@ -1,0 +1,22 @@
+.BalanceContainer {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.BalanceText {
+    font-family: 'Unbounded';
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.BalanceValue {
+    font-family: 'Unbounded';
+    font-size: 24px;
+    font-weight: 400;
+}

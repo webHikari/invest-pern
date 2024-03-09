@@ -1,0 +1,16 @@
+.WithdrawButton {
+    border-radius: 500px;
+    background: #ffffff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 12px;
+}
+
+.WithdrawButton svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}

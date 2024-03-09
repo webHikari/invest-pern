@@ -1,0 +1,14 @@
+.showCryptoCurrencies {
+    width: 100%;
+    height: 300px;
+    background: #000;
+    border-radius: 30px;
+    display: flex;
+    padding: 20px;
+}
+
+.CryptoCurrenciesText {
+    font-size: 32px;
+    font-family: 'Unbounded';
+    font-weight: 500;
+}

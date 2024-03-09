@@ -1,0 +1,23 @@
+.showHolding {
+    width: 300px;
+    height: 300px;
+    background: #82ff82;
+    color: #000000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.HoldingText {
+    font-family: 'Unbounded';
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.HoldingValue {
+    font-family: 'Unbounded';
+    font-size: 24px;
+    font-weight: 400;
+}

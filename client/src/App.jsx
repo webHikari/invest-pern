@@ -8,7 +8,6 @@ import {
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
-import Page404 from './components/Page404';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -76,7 +75,6 @@ function App() {
                         }
                     />
                     <Route path="/" element={<Navigate to="/dashboard" />} />
-                    <Route path="/404" element={<Page404 />} />
                     <Route path="/*" element={<Navigate to="/" />} />
                 </Routes>
             </div>
