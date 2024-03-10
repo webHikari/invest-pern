@@ -10,7 +10,6 @@ import CryptoCurrencies from './CryptoCurrencies/CryptoCurrencies';
 import styles from './styles/Dashboard.module.css';
 import Bet from './Bet/Bet';
 
-
 const Dashboard = ({ setAuth }) => {
     // Variables for data that will be received
 
@@ -66,7 +65,7 @@ const Dashboard = ({ setAuth }) => {
             <div className={styles.dashboardContainer2}>
                 <CryptoCurrencies />
                 <Bet />
-                <Verification verified={verified}/>
+                <Verification verified={verified} />
             </div>
             <ToastContainer
                 position="bottom-right"

@@ -5,12 +5,7 @@
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 20px;
-}
-
-.showCryptoCurrencies > div {
-    /* height: 100% ; */
 }
 
 .CryptoCurrenciesText {
@@ -21,6 +16,9 @@
 
 .CryptoCurrency {
     font-family: 'Unbounded';
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .CryptoCurrency span {

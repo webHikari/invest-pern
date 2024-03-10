@@ -46,9 +46,6 @@ const CryptoCurrencies = ({}) => {
             console.error(err.message);
         }
     };
-    getEURCurr();
-    getBTCCurr();
-    getUSDCurr();
     setInterval(() => {
         getEURCurr();
         getBTCCurr();
@@ -60,7 +57,7 @@ const CryptoCurrencies = ({}) => {
             <div className={styles.CryptoCurrenciesText}>Crypto Currencies</div>
             <div className={styles.CryptoCurrenciesContainer}>
                 <div className={styles.CryptoCurrency}>
-                    BitCoin exchange rate: <span>${BTCCurr}</span>
+                    BTC exchange rate: <span>${BTCCurr}</span>
                 </div>
                 <div className={styles.CryptoCurrency}>
                     USD exchange rate: <span>₽{USDCurr}</span>

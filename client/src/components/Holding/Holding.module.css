@@ -16,6 +16,12 @@
     font-weight: 500;
 }
 
+.HoldingTextSmall {
+    font-size: 24px;
+    font-family: 'Unbounded';
+    font-weight: 500;
+}
+
 .HoldingValue {
     font-family: 'Unbounded';
     font-size: 24px;
