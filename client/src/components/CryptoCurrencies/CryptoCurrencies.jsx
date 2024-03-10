@@ -10,11 +10,7 @@ const CryptoCurrencies = ({}) => {
         try {
             const response = await fetch(
                 'https://api.coinbase.com/v2/exchange-rates?currency=EUR'
-                // {
-                //     method: 'GET',
-                // }
             );
-
             const parseRes = await response.json();
             setEURCurr(parseFloat(parseRes.data.rates.RUB).toFixed(2));
         } catch (err) {
@@ -46,11 +42,11 @@ const CryptoCurrencies = ({}) => {
             console.error(err.message);
         }
     };
-    setInterval(() => {
-        getEURCurr();
-        getBTCCurr();
-        getUSDCurr();
-    }, 15000);
+
+    getBTCCurr()
+    getEURCurr()
+    getUSDCurr()
+
 
     return (
         <div className={styles.showCryptoCurrencies}>

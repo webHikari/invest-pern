@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verification from './Verification/Verification';
 import Balance from './Balance/Balance';
@@ -12,16 +11,15 @@ import Bet from './Bet/Bet';
 
 const Dashboard = ({ setAuth }) => {
     // Variables for data that will be received
-
+    
     const [name, setName] = useState('');
     const [balance, setBalance] = useState('');
     const [verified, setVerified] = useState('');
     const [role, setRole] = useState('');
     const [holding, setHolding] = useState('');
-
+    
     // Notification
-    const notify = () => toast.success("You're welcome, sir!");
-
+    
     // Fetch data for variables
     const getData = async () => {
         try {
@@ -42,12 +40,12 @@ const Dashboard = ({ setAuth }) => {
             console.error(err.message);
         }
     };
-
+    
     useEffect(() => {
         getData();
-        notify();
     });
-
+    
+    
     return (
         <div className={styles.mainContainer}>
             <Header
@@ -67,15 +65,6 @@ const Dashboard = ({ setAuth }) => {
                 <Bet />
                 <Verification verified={verified} />
             </div>
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                draggable
-                theme="dark"
-            />
         </div>
     );
 };
