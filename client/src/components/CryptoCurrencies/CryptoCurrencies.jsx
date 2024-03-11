@@ -50,7 +50,7 @@ const CryptoCurrencies = ({}) => {
 
     return (
         <div className={styles.showCryptoCurrencies}>
-            <div className={styles.CryptoCurrenciesText}>Crypto Currencies</div>
+            <div className={styles.CryptoCurrenciesText}>Currencies rate</div>
             <div className={styles.CryptoCurrenciesContainer}>
                 <div className={styles.CryptoCurrency}>
                     BTC exchange rate: <span>${BTCCurr}</span>

@@ -4,33 +4,36 @@ import VerificationForm from './VerificationForm';
 import { BiCheck } from 'react-icons/bi';
 
 const VerificationButton = () => {
-  const [showVerificationForm, setShowVerificationForm] = useState(false);
+    const [showVerificationForm, setShowVerificationForm] = useState(false);
 
-  const clickHandler = () => {
-    setShowVerificationForm(!showVerificationForm);
-  };
+    const clickHandler = () => {
+        setShowVerificationForm(!showVerificationForm);
+    };
 
-  const closeVerificationForm = () => {
-    setShowVerificationForm(false);
-  };
+    const closeVerificationForm = (e) => {
+        const VerificationLayout = document.getElementById('VerificationLayout');
+        if (e.target === VerificationLayout) {
+            setShowVerificationForm(false);
+        }
+    };
 
-  return (
-    <>
-      <button
-        className={styles.VerificationButton}
-        onClick={clickHandler}
-      >
-        <BiCheck />
-        Verification
-      </button>
-      {showVerificationForm ? (
-        <VerificationForm
-          showVerificationForm={showVerificationForm}
-          closeVerificationForm={closeVerificationForm}
-        />
-      ) : null}
-    </>
-  );
+    return (
+        <>
+            <button
+                className={styles.VerificationButton}
+                onClick={clickHandler}
+            >
+                <BiCheck />
+                Verification
+            </button>
+            {showVerificationForm ? (
+                <VerificationForm
+                    showVerificationForm={showVerificationForm}
+                    closeVerificationForm={closeVerificationForm}
+                />
+            ) : null}
+        </>
+    );
 };
 
 export default VerificationButton;

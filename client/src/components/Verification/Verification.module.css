@@ -22,7 +22,8 @@
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px; 
+    cursor: pointer;
 }
 
 .VerificationText {
@@ -40,24 +41,45 @@
 .VerificationForm {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .VerificationForm form {
-    width: 1200px;
+    width: 1000px;
     height: 600px;
     background: #1e1e1e;
     border-radius: 10px;
     padding: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
+    cursor: default;
+    box-shadow: 0px 0px 32px 8px #000;
+}
+
+.VerificationForm form > div {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.VerificationForm form label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.VerificationForm form input {
+    width: 300px;
 }
 
 .closeFormButton {
@@ -65,20 +87,26 @@
     height: 40px;
     padding: 0;
     margin: 0;
+    background: #1e1e1e;
     border-radius: 50%;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: -40px;
     right: -40px;
+    z-index: -1;
+    cursor: pointer;
 }
 
 .closeFormButton > * {
     width: 24px;
     height: 24px;
-    margin-top: 4px;
+    z-index: -1;
 }
 
 .VerificationForm form {
-    animation: ani .3s forwards;
+    animation: ani .3s forwards ease;
 }
 
 @keyframes ani {
