@@ -2,37 +2,61 @@ import React, { useEffect, useState } from 'react';
 import styles from './Verification.module.css';
 
 const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
-    const [documentDay, setDocumentDay] = useState('');
-    const [documentMonth, setDocumentMonth] = useState('');
-    const [documentYear, setDocumentYear] = useState('');
+    const [inputs, setInputs] = useState({
+        firstname: '',
+        surname: '',
+        lastname: '',
+        documentMonth: '',
+        documentDay: '',
+        documentYear: '',
+    });
 
-    const handleDayInputChange = (e) => {
-        const inputValue = e.target.value;
-        const numericValue = inputValue.replace(/[^0-9]/g, '');
-        const limitedValue = numericValue.slice(0, 2);
-        const finalValue = limitedValue <= 12 ? limitedValue : '12';
-        setDocumentDay(finalValue);
-    };
-    const handleMonthInputChange = (e) => {
-        const inputValue = e.target.value;
-        const numericValue = inputValue.replace(/[^0-9]/g, '');
-        const limitedValue = numericValue.slice(0, 2);
-        const finalValue = limitedValue <= 31 ? limitedValue : '31';
-        setDocumentMonth(finalValue);
-    };
-    const handleYearInputChange = (e) => {
-        const inputValue = e.target.value;
-        const numericValue = inputValue.replace(/[^0-9]/g, '');
-        const limitedValue = numericValue.slice(0, 4);
-        const finalValue = limitedValue <= 2006 ? limitedValue : '2006';
-        setDocumentYear(finalValue);
+    const {
+        firstname,
+        surname,
+        lastname,
+        documentMonth,
+        documentDay,
+        documentYear,
+    } = inputs;
+
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        let finalValue = value;
+
+        if (name === 'documentDay') {
+            const numericValue = value.replace(/[^0-9]/g, '');
+            const limitedValue = numericValue.slice(0, 2);
+            finalValue = limitedValue <= 12 ? limitedValue : '12';
+        } else if (name === 'documentMonth') {
+            const numericValue = value.replace(/[^0-9]/g, '');
+            const limitedValue = numericValue.slice(0, 2);
+            finalValue = limitedValue <= 31 ? limitedValue : '31';
+        } else if (name === 'documentYear') {
+            const numericValue = value.replace(/[^0-9]/g, '');
+            const limitedValue = numericValue.slice(0, 4);
+            finalValue = limitedValue <= 2006 ? limitedValue : '2006';
+        }
+
+        setInputs({ ...inputs, [name]: finalValue });
     };
 
-    const sendVerificationData = (e) => {
+    const sendVerificationData = async (e) => {
         e.preventDefault();
-        console.log('submitted');
-    };
+        try {
+            const body = { ...inputs };
 
+            const response = await fetch('http://localhost:3000/verification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+            const parseRes = await response.json();
+            console.log(parseRes);
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
     return (
         <div
             id="VerificationLayout"
@@ -52,24 +76,30 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                         <p>Name</p>
                         <input
                             type="text"
-                            name="verificationName"
+                            name="firstname"
                             placeholder="Name"
+                            value={firstname}
+                            onChange={(e) => onChange(e)}
                         />
                     </label>
-                    <label htmlFor="verificationName">
+                    <label htmlFor="verificationSurname">
                         <p>Surname</p>
                         <input
                             type="text"
-                            name="verificationName"
+                            name="surname"
                             placeholder="Surname"
+                            value={surname}
+                            onChange={(e) => onChange(e)}
                         />
                     </label>
-                    <label htmlFor="verificationName">
+                    <label htmlFor="verificationLastName">
                         <p>Last name</p>
                         <input
                             type="text"
-                            name="verificationName"
+                            name="lastname"
                             placeholder="Last name"
+                            value={lastname}
+                            onChange={(e) => onChange(e)}
                         />
                     </label>
                     <br />
@@ -78,7 +108,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                         <input
                             type="text"
                             value={documentDay}
-                            onChange={handleDayInputChange}
+                            onChange={(e) => onChange(e)}
                             placeholder="Day"
                             name="documentDay"
                         />
@@ -88,7 +118,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                         <input
                             type="text"
                             value={documentMonth}
-                            onChange={handleMonthInputChange}
+                            onChange={(e) => onChange(e)}
                             placeholder="Birth month"
                             name="documentMonth"
                         />
@@ -98,7 +128,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                         <input
                             type="text"
                             value={documentYear}
-                            onChange={handleYearInputChange}
+                            onChange={(e) => onChange(e)}
                             placeholder="Birth year"
                             name="documentYear"
                         />
@@ -107,13 +137,6 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                     <button type="submit">Submit</button>
                 </div>
             </form>
-            {/* <button
-                        id="closeVerificationFormButton"
-                        onClick={closeVerificationForm}
-                        className={styles.closeFormButton}
-                    >
-                        <IoCloseSharp id="closeButtonSvg" />
-                    </button> */}
         </div>
     );
 };

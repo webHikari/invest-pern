@@ -2,10 +2,10 @@ const router = require('express').Router();
 const pool = require('../database/db');
 const bcrypt = require('bcrypt');
 const jwtGenerator = require('../utils/jwtGenerator');
-const validInfo = require('../middleware/validinfo')
+const validinfo = require('../middleware/validinfo')
 const authorization = require("../middleware/authorization")
 
-router.post('/register', validInfo, async (req, res) => {
+router.post('/register', validinfo, async (req, res) => {
     try {
         // 1. destructure the req.body - name, email, password
         const { name, email, password } = req.body;
@@ -39,7 +39,7 @@ router.post('/register', validInfo, async (req, res) => {
     }
 });
 
-router.post('/login', validInfo, async (req, res) => {
+router.post('/login', validinfo, async (req, res) => {
     try {
         // 1. destructure the req.body
         const { email, password } = req.body;
@@ -51,7 +51,7 @@ router.post('/login', validInfo, async (req, res) => {
         );
 
         if (user.rows.length === 0) {
-            return res.status(401).json('Email or password is incorrect');
+            return res.status(401).json('Email or password are incorrect');
         }
 
         // 3. check if incoming password is the same the database password
@@ -61,7 +61,7 @@ router.post('/login', validInfo, async (req, res) => {
         );
 
         if (!validPassword) {
-            return res.status(401).json('Password or Email is incorrect');
+            return res.status(401).json('Password or Email are incorrect');
         }
 
         // 4. give user the jwt token

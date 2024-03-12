@@ -1,5 +1,5 @@
 module.exports = async (req, res, next) => {
-    const { email, name, password } = req.body;
+    const { email, name, password, documentDay, documentMonth, documentYear, lastname, firstname, surname } = req.body;
 
     const validEmail = (email) => {
         return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
@@ -19,6 +19,13 @@ module.exports = async (req, res, next) => {
         if (!validEmail(email)) {
             return res.status(401).json('Invalid Email');
         }
+    } else if (req.path === '/verification') {
+        console.log('huy')
+        if (![documentDay, documentMonth, documentYear, lastname, firstname, surname].every(Boolean)) {
+            console.log('huy')
+            return res.status(401).json('Missing credentials')
+        }
+        console.log('ne huy')
     }
 
     next();
