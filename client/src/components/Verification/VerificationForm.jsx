@@ -39,7 +39,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
         }
 
         setInputs({ ...inputs, [name]: finalValue });
-    };
+    };  
 
     const sendVerificationData = async (e) => {
         e.preventDefault();

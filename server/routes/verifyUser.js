@@ -1,8 +1,20 @@
 const router = require('express').Router();
 const pool = require('../database/db');
-const validinfo = require('../middleware/validinfo');
-router.post('/', validinfo, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
+        const { documentDay, documentMonth, documentYear, lastname, firstname, surname } = req.body;
+        if (
+            ![
+                documentDay,
+                documentMonth,
+                documentYear,
+                lastname,
+                firstname,
+                surname,
+            ].every(Boolean)
+        ) {
+            return res.status(401).json('Missing credentials');
+        }
         res.json(req.body);
     } catch (err) {
         console.log(err.message);
