@@ -22,12 +22,30 @@ CREATE TABLE history(
     history_balance FLOAT NOT NULL
 );
 
-CREATE TABLE verification(
+CREATE TABLE verification_buffer(
     verification_id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id uuid REFERENCES users(user_id),
     firstname VARCHAR(255) NOT NULL,
     surname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
+    birthday INTEGER NOT NULL,
+    birthmonth INTEGER NOT NULL,
+    birthyear INTEGER NOT NULL,
+    document_ID VARCHAR(255) NOT NULL,
+    document1 VARCHAR(255) NOT NULL,
+    document2 VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE verified_users(
+    verification_id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id uuid REFERENCES users(user_id),
+    firstname VARCHAR(255) NOT NULL,
+    surname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    birthday INTEGER NOT NULL,
+    birthmonth INTEGER NOT NULL,
+    birthyear INTEGER NOT NULL,
+    document_ID VARCHAR(255) NOT NULL,
     document1 VARCHAR(255) NOT NULL,
     document2 VARCHAR(255) NOT NULL
 );

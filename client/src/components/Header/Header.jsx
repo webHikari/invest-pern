@@ -22,7 +22,7 @@ const Header = ({ name, setAuth, verified, role }) => {
             </div>
             <div></div>
             <div>
-                <p>Your role is: {role}</p>
+                {/* <p>Your role is: {role}</p> */}
                 <div className={styles.UserName}>
                     <FaRegUser />
                     {name}
