@@ -61,14 +61,33 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
             const numericValue = value.replace(/[^0-9]/g, '');
             finalValue = numericValue.slice(0, 6);
         }
-
         setInputs({ ...inputs, [name]: finalValue });
     };
 
     const sendVerificationData = async (e) => {
+        const {
+            firstname,
+            surname,
+            lastname,
+            documentMonth,
+            documentDay,
+            documentYear,
+            documentSerial,
+            documentCount,
+        } = inputs;
+
         e.preventDefault();
         try {
-            const body = { ...inputs };
+            const body = {
+                firstname,
+                surname,
+                lastname,
+                documentMonth,
+                documentDay,
+                documentYear,
+                documentSerial,
+                documentCount,
+            };
 
             const response = await fetch('http://localhost:3000/verification', {
                 method: 'POST',
@@ -213,7 +232,34 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                             name="documentFile1"
                             id="documentFile1"
                             value={documentFile1}
-                            onChange={(e) => onChange(e)}
+                            onChange={async (e) => {
+                                onChange(e);
+                                const file = e.target.files[0]
+                                const formdata = new FormData();
+                                formdata.append(
+                                    'documentFile1',
+                                    file
+                                ); // modified key to match server-side naming
+                                console.log(formdata);
+
+                                try {
+                                    // added try-catch for fetch request
+                                    const fileUpload = await fetch(
+                                        'http://localhost:3000/verification/documents',
+                                        {
+                                            method: 'POST',
+                                            body: formdata,
+                                        }
+                                    );
+
+                                    const parseFileUpload =
+                                        await fileUpload.json();
+                                    console.log(parseFileUpload);
+                                } catch (error) {
+                                    console.error(error);
+                                    // Handle any fetch-related errors
+                                }
+                            }}
                         />
                     </label>
                     <p>Страница с пропиской</p>
