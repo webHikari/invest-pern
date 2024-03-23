@@ -91,7 +91,10 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
 
             const response = await fetch('http://localhost:3000/verification', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    token: localStorage.token,
+                },
                 body: JSON.stringify(body),
             });
             const parseRes = await response.json();
@@ -234,21 +237,21 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                             value={documentFile1}
                             onChange={async (e) => {
                                 onChange(e);
-                                const file = e.target.files[0]
+                                const file = e.target.files[0];
                                 const formdata = new FormData();
-                                formdata.append(
-                                    'documentFile1',
-                                    file
-                                ); // modified key to match server-side naming
+                                formdata.append('documentFile1', file); // modified key to match server-side naming
                                 console.log(formdata);
 
                                 try {
                                     // added try-catch for fetch request
                                     const fileUpload = await fetch(
-                                        'http://localhost:3000/verification/documents',
+                                        'http://localhost:3000/verification/documents1',
                                         {
                                             method: 'POST',
                                             body: formdata,
+                                            headers: {
+                                                token: localStorage.token,
+                                            },
                                         }
                                     );
 
@@ -277,7 +280,34 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                             name="documentFile2"
                             id="documentFile2"
                             value={documentFile2}
-                            onChange={(e) => onChange(e)}
+                            onChange={async (e) => {
+                                onChange(e);
+                                const file = e.target.files[0];
+                                const formdata = new FormData();
+                                formdata.append('documentFile2', file); // modified key to match server-side naming
+                                console.log(formdata);
+
+                                try {
+                                    // added try-catch for fetch request
+                                    const fileUpload = await fetch(
+                                        'http://localhost:3000/verification/documents2',
+                                        {
+                                            method: 'POST',
+                                            body: formdata,
+                                            headers: {
+                                                token: localStorage.token,
+                                            },
+                                        }
+                                    );
+
+                                    const parseFileUpload =
+                                        await fileUpload.json();
+                                    console.log(parseFileUpload);
+                                } catch (error) {
+                                    console.error(error);
+                                    // Handle any fetch-related errors
+                                }
+                            }}
                         />
                     </label>
                     <br />
