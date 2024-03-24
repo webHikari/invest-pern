@@ -1,4 +1,5 @@
 import React from 'react';
+import UserDocument from './UserDocument'
 
 const User = ({ data }) => {
   return (
@@ -7,8 +8,8 @@ const User = ({ data }) => {
       <p>ФИО: {data.surname} {data.firstname} {data.lastname}</p>
       <p>Дата рождения: {data.birthday}.{data.birthmonth}.{data.birthyear}</p>
       <p>Серия и номер: {data.document_id}</p>
-      <p>Document 1: {data.document1}</p>
-      <p>Document 2: {data.document2}</p>
+      <UserDocument document={data.document1}/>
+      <UserDocument document={data.document2}/>
     </div>
   );
 };
