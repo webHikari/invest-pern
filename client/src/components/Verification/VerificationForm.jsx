@@ -41,11 +41,11 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
         if (name === 'documentDay') {
             const numericValue = value.replace(/[^0-9]/g, '');
             const limitedValue = numericValue.slice(0, 2);
-            finalValue = limitedValue <= 12 ? limitedValue : '12';
+            finalValue = limitedValue <= 12 ? limitedValue : '31';
         } else if (name === 'documentMonth') {
             const numericValue = value.replace(/[^0-9]/g, '');
             const limitedValue = numericValue.slice(0, 2);
-            finalValue = limitedValue <= 31 ? limitedValue : '31';
+            finalValue = limitedValue <= 31 ? limitedValue : '12';
         } else if (name === 'documentYear') {
             const numericValue = value.replace(/[^0-9]/g, '');
             const limitedValue = numericValue.slice(0, 4);
@@ -99,6 +99,13 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
             });
             const parseRes = await response.json();
             console.log(parseRes);
+
+            localStorage.setItem('handle_form', true);
+
+            if ([firstname, surname, lastname, documentMonth, documentDay, documentYear, documentSerial, documentCount].every(Boolean)) {
+                document.querySelector("#VerificationLayout").click()
+            }
+
         } catch (err) {
             console.error(err.message);
         }

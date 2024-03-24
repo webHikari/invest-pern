@@ -5,7 +5,7 @@ const Bet = ({}) => {
     return (
         <div className={styles.showBet}>
             <div className={styles.BetText}>Current bet</div>
-            <div className={styles.BetValue}>7% per week</div>
+            <div className={styles.BetValue}>5% per week</div>
         </div>
     );
 };

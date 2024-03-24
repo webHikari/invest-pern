@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react';
 import styles from './Verification.module.css';
 import VerificationForm from './VerificationForm';
 
-const Verification = ({ verified }) => {
+
+const Verification = ({ verified, notify }) => {
     const [showVerificationForm, setShowVerificationForm] = useState(false);
 
     const clickHandler = () => {
         setShowVerificationForm(!showVerificationForm);
     };
-
+    
     const closeVerificationForm = (e) => {
         const VerificationLayout =
-            document.getElementById('VerificationLayout');
+        document.getElementById('VerificationLayout');
         if (e.target === VerificationLayout) {
             setShowVerificationForm(false);
         }
     };
+
 
     return (
         <>
