@@ -1,0 +1,67 @@
+.verificationData {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.verificationData > div {
+    background: #2b2b2b;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.approveButton {
+    background: #34923f;
+    width: 120px;
+}
+
+.buttonArea {
+    display: flex;
+    gap: 8px;
+}
+
+.declineButton {
+    background: #923434;
+    width: 120px;
+}
+
+.mainCont {
+    display: flex;
+    gap: 32px;
+}
+
+.documentArea {
+    display: flex;
+    gap: 16px;
+}
+
+.document {
+    width: 400px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px; cursor: pointer; background: #1e1e1e;
+}
+
+.document img {
+    max-width: 380px;
+}
+
+.document:hover {
+    background: #161616;
+}
+
+.usernameArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

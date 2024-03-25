@@ -45,7 +45,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
         } else if (name === 'documentMonth') {
             const numericValue = value.replace(/[^0-9]/g, '');
             const limitedValue = numericValue.slice(0, 2);
-            finalValue = limitedValue <= 31 ? limitedValue : '12';
+            finalValue = limitedValue <= 12 ? limitedValue : '12';
         } else if (name === 'documentYear') {
             const numericValue = value.replace(/[^0-9]/g, '');
             const limitedValue = numericValue.slice(0, 4);

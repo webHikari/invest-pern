@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const pool = require('../database/db');
 const authorization = require('../middleware/authorization');
+const path = require('path')
 
 // Endpoint for retrieving unverified users (accessible to admins only)
 router.post('/verification', authorization, async (req, res) => {
@@ -55,7 +56,7 @@ router.post('/verifyUser', authorization, async (req, res) => {
         );
 
         if (admin.rows.length !== 0) {
-            if (user.rows.length !== 0) {
+            if (user.rows.length !== 0 && user_id !== '42eb2003-765f-4083-aee8-491fa206cce1') {
                 if (action === 'Decline') {
                     // Delete user from verification_buffer
                     const deleteUser = await pool.query(
@@ -121,6 +122,37 @@ router.post('/verifyUser', authorization, async (req, res) => {
         }
     } catch (err) {
         console.log(err.message);
+    }
+});
+
+// Endpoint for get documents
+router.post('/getdocument', authorization, async (req, res) => {
+    try {
+        const token = req.header('token');
+        const { document} = req.body;
+        const parsedToken = JSON.parse(
+            Buffer.from(token.split('.')[1], 'base64').toString()
+        );
+
+        // Retrieve admin information from the database
+        const admin = await pool.query(
+            'SELECT * FROM users WHERE user_id = $1 AND user_role = $2',
+            [parsedToken.user, 'Admin']
+        );
+
+        if (admin.rows.length !== 0) {
+            if (document !== null) {
+                const file = path.join(__dirname, '../documents/' + document)
+                res.sendFile(file)
+            } else {
+                res.status(403).json('No document')
+            }
+        } else {
+            res.status(403).json('You are not admin');
+        }
+    } catch (err) {
+        console.log(err.message);
+        res.status(403).json('Server error');
     }
 });
 
