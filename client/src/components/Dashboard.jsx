@@ -49,6 +49,7 @@ const Dashboard = ({ setAuth }) => {
             {role === 'Admin' ? (
                 <>
                     <Header
+                        balance={balance}
                         setAuth={setAuth}
                         verified={true}
                         name={name}
@@ -59,6 +60,7 @@ const Dashboard = ({ setAuth }) => {
             ) : (
                 <>
                     <Header
+                        balance={balance}
                         setAuth={setAuth}
                         verified={verified}
                         name={name}

@@ -6,7 +6,7 @@ import VerificationButton from '../Verification/VerificationButton';
 import Payment from '../Payment/Payment';
 import Withdraw from '../Withdraw/Withdraw';
 
-const Header = ({ name, setAuth, verified, role }) => {
+const Header = ({ name, setAuth, verified, role, balance }) => {
     const logout = (e) => {
         e.preventDefault();
         localStorage.removeItem('token');
@@ -23,6 +23,7 @@ const Header = ({ name, setAuth, verified, role }) => {
             <div></div>
             <div>
                 {/* <p>Your role is: {role}</p> */}
+                <p className={styles.balance}>${balance}</p>
                 <div className={styles.UserName}>
                     <FaRegUser />
                     {name}

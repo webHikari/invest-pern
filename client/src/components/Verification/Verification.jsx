@@ -30,6 +30,7 @@ const Verification = ({ verified, notify }) => {
                 </div>
             </div>
             {showVerificationForm ? (
+                verified ? null : 
                 <VerificationForm
                     showVerificationForm={showVerificationForm}
                     closeVerificationForm={closeVerificationForm}
