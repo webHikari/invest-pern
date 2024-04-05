@@ -50,16 +50,16 @@ const CryptoCurrencies = ({}) => {
 
     return (
         <div className={styles.showCryptoCurrencies}>
-            <div className={styles.CryptoCurrenciesText}>Currencies rate</div>
+            <div className={styles.CryptoCurrenciesText}><h4>Currencies rate</h4></div>
             <div className={styles.CryptoCurrenciesContainer}>
                 <div className={styles.CryptoCurrency}>
-                    BTC exchange rate: <span>${BTCCurr}</span>
+                    <h4>BTC exchange rate: <span>${BTCCurr}</span></h4>
                 </div>
                 <div className={styles.CryptoCurrency}>
-                    USD exchange rate: <span>₽{USDCurr}</span>
+                    <h4>USD exchange rate: <span>₽{USDCurr}</span></h4>
                 </div>
                 <div className={styles.CryptoCurrency}>
-                    EUR exchange rate: <span>₽{EURCurr}</span>
+                    <h4>EUR exchange rate: <span>₽{EURCurr}</span></h4>
                 </div>
             </div>
         </div>

@@ -4,8 +4,8 @@ import styles from './Balance.module.css';
 const Balance = ({ balance }) => {
     return (
         <div className={styles.BalanceContainer}>
-            <div className={styles.BalanceText}>Balance</div>
-            <div className={styles.BalanceValue}>${balance}</div>
+            <div className={styles.BalanceText}><h4>Balance</h4></div>
+            <div className={styles.BalanceValue}><h4>${balance}</h4></div>
         </div>
     );
 };

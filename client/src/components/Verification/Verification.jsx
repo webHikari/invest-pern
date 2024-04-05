@@ -26,7 +26,7 @@ const Verification = ({ verified, notify }) => {
                 onClick={clickHandler}
             >
                 <div className={styles.VerificationText}>
-                    {verified ? 'Verified' : 'Not verified'}
+                    <h4>{verified ? 'Verified' : 'Not verified'}</h4>
                 </div>
             </div>
             {showVerificationForm ? (

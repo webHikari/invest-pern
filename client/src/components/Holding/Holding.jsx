@@ -4,12 +4,18 @@ import styles from './Holding.module.css';
 const Holding = ({ holding }) => {
     return (
         <div className={styles.showHolding}>
-            <div className={styles.HoldingText}>Holdings</div>
-            <div className={styles.HoldingValue}>${holding}</div>
-            <div className={styles.HoldingTextSmall}>Expected profit:</div>
-            <div className={styles.HoldingValue}>+ ${holding * 0.07}</div>
-            <div className={styles.HoldingTextSmall}>Total:</div>
-            <div className={styles.HoldingValue}>${holding * 1.07}</div>
+            <div className={styles.HoldingText}>
+                <h4>Holdings</h4>
+            </div>
+            <div className={styles.HoldingValue}>
+                <h4>${holding}</h4>
+            </div>
+            <div className={styles.HoldingTextSmall}>
+                <h4>Expected profit:</h4>
+            </div>
+            <div className={styles.HoldingValue}>
+                <h4>${holding * 1.07}</h4>
+            </div>
         </div>
     );
 };

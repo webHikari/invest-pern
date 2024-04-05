@@ -8,6 +8,7 @@ import {
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
+import Index from './components/Index'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -42,13 +43,15 @@ function App() {
 
     return (
         <Router>
-            <div className="container">
                 <Routes>
                     <Route
                         path="/login"
                         element={
                             !isAuthenticated ? (
-                                <Login setAuth={setAuth} />
+                                <>
+                                    <Login setAuth={setAuth} />
+                                    <Register setAuth={setAuth} />
+                                </>
                             ) : (
                                 <Navigate to="/dashboard" />
                             )
@@ -74,11 +77,14 @@ function App() {
                             )
                         }
                     />
-                    <Route exact path="/" element={<Navigate to="/dashboard" />} />
+                    <Route
+                        exact
+                        path="/"
+                        element={<Index />}
+                    />
                     <Route path="/*" element={<Navigate to="/" />} />
                 </Routes>
-            </div>
-        </Router>
+           </Router>
     );
 }
 
