@@ -63,10 +63,8 @@ export default function index() {
                     <div className={styles.hero}>
                         <div className={styles.hero_blured_cont}>
                             <h1 className={styles.hero_text}>
-                                Больше,
-                                <br />
-                                чем просто
-                                <br />
+                                Больше,<br />
+                                чем просто<br />
                                 инвестиции
                             </h1>
                         </div>
