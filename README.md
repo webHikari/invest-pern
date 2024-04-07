@@ -1,2 +1,2 @@
 # invest-pern
-$800 Investment app
+$1250 Investment app
