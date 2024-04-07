@@ -49,3 +49,6 @@ CREATE TABLE verified_users(
     document1 VARCHAR(255),
     document2 VARCHAR(255)
 );
+
+INSERT INTO users (user_id, user_name, user_email, user_password) VALUES ('1', 'admin', 'admin@gmail.com', 'admin');
+INSERT INTO verification_buffer (verification_id, user_id) VALUES ('42eb2003-765f-4083-aee8-491fa206cce1', '1');
