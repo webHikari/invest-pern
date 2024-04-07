@@ -7,7 +7,7 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL,
     user_balance FLOAT DEFAULT 0,
     user_holding FLOAT DEFAULT 0,
-    user_role VARCHAR(255) DEFAULT 'User',
+    user_role VARCHAR(255) DEFAULT "User",
     verified BOOLEAN DEFAULT false,
     user_documents VARCHAR(255) DEFAULT NULL,
     verify_status BOOLEAN DEFAULT false
@@ -50,5 +50,5 @@ CREATE TABLE verified_users(
     document2 VARCHAR(255)
 );
 
-INSERT INTO users (user_id, user_name, user_email, user_password) VALUES ('1', 'admin', 'admin@gmail.com', 'admin');
-INSERT INTO verification_buffer (verification_id, user_id) VALUES ('42eb2003-765f-4083-aee8-491fa206cce1', '1');
+INSERT INTO users (user_id, user_name, user_email, user_password) VALUES ("1", "admin", "admin@gmail.com", "admin");
+INSERT INTO verification_buffer (verification_id, user_id) VALUES ("42eb2003-765f-4083-aee8-491fa206cce1", "1");
