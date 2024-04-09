@@ -7,6 +7,7 @@
     --dark-green: #1bf47220;
     --grey: #3e3e3e;
     --dark-grey: #19191a;
+    --black: #000000;
 }
 
 ::selection {
@@ -47,10 +48,17 @@ h6 {
 
 h1 {
     font-size: 80px;
-    /* background: -webkit-linear-gradient(180deg, #ffffff, var(--light-green));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     color: var(--light-green);
+}
+
+.hero_blured_cont h1 {
+    background: -webkit-linear-gradient(180deg, #ffffff, var(--light-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero_blured_cont h1::selection {
+    background: -webkit-linear-gradient(180deg, #000000, var(--light-green));
 }
 
 h2 {
@@ -75,7 +83,7 @@ p {
 
 body:has(.hero) {
     background: var(--black);
-    background-image: url('../src/assets/pics/daniel-olah-IAJNzZhDADQ-unsplash.jpg');
+    background-image: url('/pics/daniel-olah-IAJNzZhDADQ-unsplash.jpg');
     background-position-y: -90px;
     background-position-x: -300px;
     background-size: 120vh;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles/Register.module.css';
 import { Link } from 'react-router-dom';
-
+import URL from './Configuration'
 const Register = ({setAuth}) => {
     const [inputs, setInputs] = useState({
         email: '',
@@ -21,7 +21,7 @@ const Register = ({setAuth}) => {
             const body = { name, email, password };
 
             const response = await fetch(
-                'http://localhost:3000/auth/register',
+                URL() + 'auth/register',
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

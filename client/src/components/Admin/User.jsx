@@ -1,12 +1,13 @@
 import React from 'react';
 import UserDocument from './UserDocument';
 import styles from './Admin.module.css';
+import URL from '../Configuration'
 
 const User = ({ data }) => {
     const handleVerificationButton = async (action) => {
         try {
             const fetchData = await fetch(
-                'http://localhost:3000/admin/verifyUser',
+                URL() + 'admin/verifyUser',
                 {
                     method: 'POST',
                     body: JSON.stringify({

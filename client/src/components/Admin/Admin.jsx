@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Admin.module.css';
 import User from './User';
+import URL from '../Configuration'
 
 const Admin = () => {
     const [verificationData, setVerificationData] = useState([]);
@@ -8,7 +9,7 @@ const Admin = () => {
     const getDataForVerification = async () => {
         try {
             const fetchData = await fetch(
-                'http://localhost:3000/admin/verification',
+                URL() + 'admin/verification',
                 {
                     method: 'POST',
                     body: '',

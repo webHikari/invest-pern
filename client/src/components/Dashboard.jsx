@@ -7,7 +7,7 @@ import History from './History/History';
 import CryptoCurrencies from './CryptoCurrencies/CryptoCurrencies';
 import Bet from './Bet/Bet';
 import Admin from './Admin/Admin';
-
+import URL from './Configuration'
 import styles from './styles/Dashboard.module.css';
 
 const Dashboard = ({ setAuth }) => {
@@ -22,7 +22,7 @@ const Dashboard = ({ setAuth }) => {
     // Fetch data for variables
     const getData = async () => {
         try {
-            const response = await fetch('http://localhost:3000/dashboard', {
+            const response = await fetch(URL() + 'dashboard', {
                 method: 'GET',
                 headers: { token: localStorage.token },
             });

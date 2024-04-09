@@ -10,7 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Index from './components/Index'
 import { useState, useEffect } from 'react';
-
+import URL from './components/Configuration'
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -21,7 +21,7 @@ function App() {
     const isAuth = async () => {
         try {
             const response = await fetch(
-                'http://localhost:3000/auth/is-verify',
+                URL() + 'auth/is-verify',
                 {
                     method: 'GET',
                     headers: { token: localStorage.token },

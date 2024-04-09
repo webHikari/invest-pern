@@ -1,51 +1,51 @@
 @font-face {
     font-family: 'Title-Ultralight';
-    src: url(./src/assets/fonts/NeueMachina/NeueMachina-Ultralight.ttf);
+    src: url(/fonts/NeueMachina/NeueMachina-Ultralight.ttf);
 }
 
 @font-face {
     font-family: 'Title-Light';
-    src: url(./src/assets/fonts/NeueMachina/NeueMachina-Light.ttf);
+    src: url(/fonts/NeueMachina/NeueMachina-Light.ttf);
 }
 
 @font-face {
     font-family: 'Title-Regular';
-    src: url(./src/assets/fonts/NeueMachina/NeueMachina-Regular.ttf);
+    src: url(/fonts/NeueMachina/NeueMachina-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Title-Medium';
-    src: url(./src/assets/fonts/NeueMachina/NeueMachina-Medium.ttf);
+    src: url(/fonts/NeueMachina/NeueMachina-Medium.ttf);
 }
 
 @font-face {
     font-family: 'Title-Bold';
-    src: url(./src/assets/fonts/NeueMachina/NeueMachina-Bold.ttf);
+    src: url(/fonts/NeueMachina/NeueMachina-Bold.ttf);
 }
 
 @font-face {
     font-family: 'Text-Regular';
-    src: url(./src/assets/fonts/Inter/Inter-Regular.ttf);
+    src: url(/fonts/Inter/Inter-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Text-Thin';
-    src: url(./src/assets/fonts/Inter/Inter-Thin.ttf);
+    src: url(/fonts/Inter/Inter-Thin.ttf);
 }
 
 @font-face {
     font-family: 'Text-Bold';
-    src: url(./src/assets/fonts/Inter/Inter-Bold.ttf);
+    src: url(/fonts/Inter/Inter-Bold.ttf);
 }
 
 @font-face {
     font-family: 'Unbounded-Medium';
-    src: url(./src/assets/fonts/Unbounded/Unbounded-Medium.ttf);
+    src: url(/fonts/Unbounded/Unbounded-Medium.ttf);
 }
 
 @font-face {
     font-family: 'Unbounded-Regular';
-    src: url(./src/assets/fonts/Unbounded/Unbounded-Regular.ttf);
+    src: url(/fonts/Unbounded/Unbounded-Regular.ttf);
 }
 
 /* @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap'); */

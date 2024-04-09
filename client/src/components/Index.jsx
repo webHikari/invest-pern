@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/Index.module.css';
 
-export default function index() {
+export default function Index() {
     return (
         <>
             <header>
                 <nav>
                     <div className={styles.header_logo}>
                         <div className={styles.header_true_logo}>
-                            <img src="../src/assets/icons/logo.svg" alt="" />
+                            <img src="/icons/logo.svg" alt="" />
                         </div>
                         <div className={styles.header_wrapper}>
                             <h4>КурсКапитал</h4>
@@ -51,7 +51,7 @@ export default function index() {
                                 styles.header_button_auth
                             }
                         >
-                            <img src="../src/assets/icons/user.svg" alt="" />
+                            <img src="/icons/user.svg" alt="" />
                             Создать аккаунт
                         </Link>
                     </div>
@@ -63,11 +63,7 @@ export default function index() {
                     <div className={styles.hero}>
                         <div className={styles.hero_blured_cont}>
                             <h1 className={styles.hero_text}>
-                                Больше,
-                                <br />
-                                чем просто
-                                <br />
-                                инвестиции
+                                КурсКапитал
                             </h1>
                         </div>
                     </div>
@@ -81,7 +77,7 @@ export default function index() {
                             <div className={styles.card_wrapper}>
                                 <div className={styles.card_column}>
                                     <div>
-                                        <h3>10% денег</h3>
+                                        <h3>5% денег</h3>
                                     </div>
                                     <div>
                                         <p>

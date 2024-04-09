@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Admin.module.css';
+import URL from '../Configuration'
 
 const User = ({ document }) => {
     const [fileURL, setFileURL] = useState(null);
@@ -7,7 +8,7 @@ const User = ({ document }) => {
     const getUserDocument = async () => {
         try {
             const fetchData = await fetch(
-                'http://localhost:3000/admin/getdocument',
+                URL() + 'admin/getdocument',
                 {
                     method: 'POST',
                     body: JSON.stringify({

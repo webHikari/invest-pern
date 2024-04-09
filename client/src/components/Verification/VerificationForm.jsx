@@ -3,6 +3,7 @@ import styles from './Verification.module.css';
 import { AiOutlineUpload } from 'react-icons/ai';
 import { MdOutlineLibraryAddCheck } from 'react-icons/md';
 import { BiCheck } from 'react-icons/bi';
+import URL from '../Configuration'
 
 const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
     const [inputs, setInputs] = useState({
@@ -89,7 +90,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                 documentCount,
             };
 
-            const response = await fetch('http://localhost:3000/verification', {
+            const response = await fetch(URL() + 'verification', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -252,7 +253,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                                 try {
                                     // added try-catch for fetch request
                                     const fileUpload = await fetch(
-                                        'http://localhost:3000/verification/documents1',
+                                        URL() + 'verification/documents1',
                                         {
                                             method: 'POST',
                                             body: formdata,
@@ -297,7 +298,7 @@ const VerificationForm = ({ showVerificationForm, closeVerificationForm }) => {
                                 try {
                                     // added try-catch for fetch request
                                     const fileUpload = await fetch(
-                                        'http://localhost:3000/verification/documents2',
+                                        URL() + 'verification/documents2',
                                         {
                                             method: 'POST',
                                             body: formdata,
