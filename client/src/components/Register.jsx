@@ -38,8 +38,8 @@ const Register = ({setAuth}) => {
     };
 
     return (
-        <>
-            <h1>Register</h1>
+        <div>
+            <h2>Register</h2>
             <form onSubmit={onSubmitForm}>
                 <input
                     type="email"
@@ -64,8 +64,7 @@ const Register = ({setAuth}) => {
                 />
                 <button type="submit">Submit</button>
             </form>
-            <Link to="/login">Login</Link>
-        </>
+        </div>
     );
 };
 

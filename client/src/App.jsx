@@ -9,12 +9,13 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
 
-import Index from './components/Index'
-import About from './components/About'
-import Warranty from './components/Warranty.jsx'
+
+import Index from './components/Index';
+import About from './components/About';
+import Warranty from './components/Warranty.jsx';
 
 import { useState, useEffect } from 'react';
-import URL from './components/Configuration'
+import URL from './components/Configuration';
 
 
 
@@ -55,10 +56,7 @@ function App() {
                         path="/login"
                         element={
                             !isAuthenticated ? (
-                                <>
-                                    <Login setAuth={setAuth} />
-                                    <Register setAuth={setAuth} />
-                                </>
+                                <Login setAuth={setAuth} />
                             ) : (
                                 <Navigate to="/dashboard" />
                             )
@@ -68,7 +66,7 @@ function App() {
                         path="/register"
                         element={
                             !isAuthenticated ? (
-                                <Register setAuth={setAuth} />
+                                <Register setAuth={setAuth} /> 
                             ) : (
                                 <Navigate to="/dashboard" />
                             )
@@ -78,7 +76,7 @@ function App() {
                         path="/dashboard"
                         element={
                             !isAuthenticated ? (
-                                <Navigate to="/login" />
+                                <Navigate to="/" />
                             ) : (
                                 <Dashboard setAuth={setAuth} />
                             )

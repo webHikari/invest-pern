@@ -71,7 +71,7 @@ export default function IndexHeader() {
                         { name ? 
                           (<Link 
                             to="/dashboard"
-                            classname={styles.header_button + ' ' + styles.header_button_auth}
+                            className={styles.header_button + ' ' + styles.header_button_auth}
                           >
                             <img src="/icons/user.svg" alt="" />
                             {name}
