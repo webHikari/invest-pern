@@ -2,61 +2,13 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/Index.module.css';
 
-export default function Index() {
+import IndexHeader from './IndexHeader/IndexHeader.jsx'
+
+export default function Index({setAuth}) {
+
     return (
         <>
-            <header>
-                <nav>
-                    <div className={styles.header_logo}>
-                        <div className={styles.header_true_logo}>
-                            <img src="/icons/logo.svg" alt="" />
-                        </div>
-                        <div className={styles.header_wrapper}>
-                            <h4>КурсКапитал</h4>
-                        </div>
-                    </div>
-                    <div className={styles.header_links}>
-                        <a
-                            href="#"
-                            className={
-                                styles.header_link +
-                                ' ' +
-                                styles.header_link_active
-                            }
-                        >
-                            Главная
-                        </a>
-                        <a href="#" className={styles.header_link}>
-                            О нас
-                        </a>
-                        <a href="#" className={styles.header_link}>
-                            Гарантии
-                        </a>
-                        <a href="#" className={styles.header_link}>
-                            Ставки
-                        </a>
-                        <a href="#" className={styles.header_link}>
-                            Инвестиции
-                        </a>
-                    </div>
-                    <div className={styles.header_auth}>
-                        <Link to="/login" className={styles.header_button}>
-                            Войти
-                        </Link>
-                        <Link
-                            to="/register"
-                            className={
-                                styles.header_button +
-                                ' ' +
-                                styles.header_button_auth
-                            }
-                        >
-                            <img src="/icons/user.svg" alt="" />
-                            Создать аккаунт
-                        </Link>
-                    </div>
-                </nav>
-            </header>
+            <IndexHeader /> 
             <main>
                 <div className={styles.container}>
                     <div className={styles.particles}></div>

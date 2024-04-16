@@ -8,9 +8,16 @@ import {
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
+
 import Index from './components/Index'
+import About from './components/About'
+import Warranty from './components/Warranty.jsx'
+
 import { useState, useEffect } from 'react';
 import URL from './components/Configuration'
+
+
+
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -80,7 +87,15 @@ function App() {
                     <Route
                         exact
                         path="/"
-                        element={<Index />}
+                        element={<Index setAuth={setAuth}/>}
+                    />
+                    <Route 
+                        path="/about"
+                        element={<About />}
+                    />
+                    <Route 
+                        path="/warranty"
+                        element={<Warranty />}
                     />
                     <Route path="/*" element={<Navigate to="/" />} />
                 </Routes>
